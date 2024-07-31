@@ -1,0 +1,29 @@
+name: CPU, RAM, DISK CHECK
+
+on:
+  workflow_dispatch:
+    
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  HLS:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Check cpu
+        run: |
+          echo
+          lscpu
+      - name: Check ram
+        run: |
+          echo
+          free -h
+      - name: Check disk
+        run: |
+          echo
+          df -h
+          
